@@ -1,0 +1,9 @@
+.desktop-only {
+  display: none;
+}
+
+@media (width > 24.375em ) {
+  .desktop-only {
+    display: initial;
+  }
+}

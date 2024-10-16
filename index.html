@@ -10,7 +10,57 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-  
+  <img id="logo" class="desktop-only" src="assets/logo.svg" alt="Logomarca.">
+  <main>
+    <a href="#">Voltar</a>
+    <h1>Compras da semana</h1>
+
+    <form class="add-item">
+      <input type="text" name="new-item" id="new-item" placeholder="Adicione um novo item" required>
+      <button type="submit" id="btn-add" class="button">Adicionar item</button>
+    </form>
+
+    <ul role="list">
+      <li>
+        <div class="check-wrapper">
+          <div class="checkbox-image"></div>
+          <input type="checkbox" name="item" value="pao-de-forma" id="pao-de-forma">
+          <label for="pao-de-forma">Pão de forma</label>
+        </div>
+        <button type="button" class="btn"></button>
+      </li>
+      <li>
+        <div class="check-wrapper">
+          <div class="checkbox-image"></div>
+          <input type="checkbox" name="item" value="cafe-preto" id="cafe-preto">
+          <label for="cafe-preto">Café preto</label>
+        </div>
+        <button type="button" class="btn"></button>
+      </li>
+      <li>
+        <div class="check-wrapper">
+          <div class="checkbox-image"></div>
+          <input type="checkbox" name="item" value="suco-de-laranja" id="suco-de-laranja">
+          <label for="suco-de-laranja">Suco de laranja</label>
+        </div>
+        <button type="button" class="btn"></button>
+      </li>
+      <li>
+        <div class="check-wrapper">
+          <div class="checkbox-image"></div>
+          <input type="checkbox" name="item" value="bolacha" id="bolacha">
+          <label for="bolacha">Bolacha</label>
+        </div>
+        <button type="button" class="btn"></button>
+      </li>
+    </ul>
+    <div class="warning-wrapper hide">
+      <div class="warning-image"></div>
+      <span for="pao-de-forma">O item foi removido da lista</span>
+      <button type="button" class="btn-x"></button>
+    </div>
+  </main>
+
   <script src="script.js"></script>
 </body>
 </html>

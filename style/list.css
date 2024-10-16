@@ -1,0 +1,198 @@
+#logo {
+  height: 2.5rem;
+  margin-top: 1.5rem;
+}
+
+main {
+  width: 20.5rem;
+  margin-inline: auto;
+  padding-bottom: 8.56rem;
+  max-height: calc(100vh - 6.25rem);
+
+  & a {
+    display: block;
+    margin-block: 2rem 1rem;
+    margin-left: 1.125rem;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      background: url(../assets/icons/ArrowRight.svg) center/contain;
+      left: -1.125rem;
+      rotate: 180deg;
+      width: 1rem;
+      height: 1rem;
+    }
+  }
+
+  & .add-item {
+    display: grid;
+    gap: 1rem;
+    margin-block: 2.5rem;
+
+    & input {
+      font: var(--text);
+      color: var(--content-secondary);
+      padding: .75rem 1.125rem;
+      border: 2px solid var(--border-primary);
+      border-radius: .75rem;
+      width: 100%;
+      outline: None;
+      
+      transition: border-color 400ms;
+
+      &::-webkit-input-placeholder {
+        color: var(--content-tertiary);
+      } 
+      &::-moz-placeholder {
+        color: var(--content-tertiary);
+      }
+
+      &:hover {
+        border-color: var(--border-hover);
+      }
+
+      &:focus-within {
+        border-color: var(--color-brand);
+      }
+    }
+
+    & button {
+      width: 100%;
+      padding: .75rem 1.5rem;
+      background-color: var(--color-brand);
+      display: flex;
+      align-items: center;
+      border-radius: .75rem;
+      border: none;
+      cursor: pointer;
+      font: var(--label);
+      color: var(--always-white);
+
+      transition: background-color 400ms;
+
+      &:hover {
+        background-color: var(--color-brand-hover);
+      } 
+    }
+  }
+
+  & ul[role="list"] {
+    list-style-type: none;
+    display: grid;
+    gap: .75rem;
+    max-height: 44vh;
+    overflow-y: auto;
+
+    & li {
+      display: flex;
+      gap: .75rem;
+      align-items: center;
+      justify-content: space-between;
+      background-color: var(--bg-secondary);
+      border-radius: .75rem;
+      padding-inline: .75rem;
+
+      & .check-wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+        padding-block: .812rem;
+        width: 75%;
+        
+        & .checkbox-image {
+          position: absolute;
+          background: url(../assets/icons/state=Default.svg);
+          width: 1rem;
+          height: 1rem;
+        }
+
+        &:hover, &:focus-within {
+          & .checkbox-image {
+            background: url(../assets/icons/state=hover.svg);
+          }
+        }
+
+        &:has(:checked) {
+          & .checkbox-image {
+            background: url(../assets/icons/state=selected.svg);
+          }
+        }
+
+        & input[type="checkbox"] {
+          position: absolute;
+          inset: 0;
+          opacity: 0;
+          cursor: pointer;
+        }
+
+        & label {
+          font: var(--paragraph);
+          color: var(--content-secondary);
+          margin-left: 1.75rem;
+        }
+
+      }
+
+      & .btn {
+        all:unset;
+        cursor: pointer;
+        background: url(../assets/icons/Frame-3.svg) no-repeat center/cover;
+        width: 1rem;
+        height: 1rem;
+        margin: .5rem;
+      }
+    }
+  }
+
+  & .warning-wrapper {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    
+    background-color: var(--color-danger);
+    border-radius: .75rem;
+    padding: .75rem;
+    margin-top: 1.5rem;
+
+    & .warning-image {
+      background: url(../assets/icons/warning-circle-filled.svg) no-repeat center/cover;
+      width: 1.25rem;
+      height: 1.25rem;
+    }
+
+    & span {
+      font: var(--label);
+      color: var(--always-white);
+      margin-right: auto;
+    }
+
+    & .btn-x {
+      all: unset;
+      background: url(../assets/icons/delete-small.svg);
+      width: 1.25rem;
+      height: 1.25rem;
+      cursor: pointer;
+    }
+  }
+
+  .hide {
+    display: None;
+  }
+}
+
+@media (width >= 41em) {
+  main {
+    width: 39rem;
+
+    & a {
+      margin-block: 4rem 1rem;
+    }
+
+    & .add-item {
+    grid-auto-flow: column;
+    grid-template-columns: auto 10rem;
+    }
+  }
+}

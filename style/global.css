@@ -16,6 +16,7 @@
   --content-primary: #080B12;
   --content-secondary: #374151;
   --content-tertiary: #9CA3AF;
+  --content-placeholder: #6B6671;
   --always-white: var(--bg-secondary);
   
   --border-primary: #D1D5DB;
@@ -26,6 +27,34 @@
   --title: 700 1.5rem/2rem var(--font-family);
   --label: 600 1rem/1.25rem var(--font-family);
   --text: 400 1rem/1.4rem var(--font-family);
-  --paragraph: 500 1rem/1.25rem var(--font-family);
+  --paragraph: 500 1rem/1.5rem var(--font-family);
   --link: 500 .875rem/1rem var(--font-family);
+}
+
+body {
+  background-color: var(--bg-primary);
+  padding-inline: 2rem;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-brand);
+  font: var(--link);
+}
+
+h1 {
+  font: var(--title);
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--border-hover);
 }
